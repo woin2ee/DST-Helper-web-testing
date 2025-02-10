@@ -65,7 +65,7 @@ setProgress(85);
 _flutter.loader.load(
     {
         serviceWorkerSettings: {
-            serviceWorkerVersion: '"1335545296"',
+            serviceWorkerVersion: '"1508976296"',
         },
         config: userConfig,
         onEntrypointLoaded: async function (engineInitializer) {
@@ -87,8 +87,8 @@ function setProgress(value) {
         
         function animateProgress() {
             let difference = value - currentProgress;
-            let step = difference / 14;
-            step = step * 0.7 + (difference > 0 ? 0.1 : -0.1);
+            let step = difference / 10;
+            step = step * 0.9 + (difference > 0 ? 0.1 : -0.1);
             
             if (Math.abs(difference) < 0.5) {
                 currentProgress = value;
@@ -111,7 +111,7 @@ function createProgressBar() {
     document.body.appendChild(div);
     div.insertAdjacentHTML(
         'afterbegin',
-        `<div class="progress col-6" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+        `<div class="progress col-4" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
             <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%">
                 0%
             </div>
